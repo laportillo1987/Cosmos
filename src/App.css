@@ -1,0 +1,40 @@
+/* App.css */
+
+/* Estilos para el contenedor principal de la aplicación */
+.App {
+  text-align: center; /* Centra el texto dentro de la aplicación */
+  font-family: Arial, sans-serif; /* Define la fuente principal de la aplicación */
+  background-color: #f0f0f0; /* Fondo gris claro para la página */
+  min-height: 100vh; /* Asegura que la aplicación ocupe al menos el 100% de la altura de la ventana */
+  display: flex; /* Usa flexbox para disposición de los elementos */
+  flex-direction: column; /* Los elementos se apilan verticalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+/* Estilos para el título de la aplicación */
+.App-logo {
+  height: 40vmin; /* La altura del logo será un 40% del alto de la ventana */
+  pointer-events: none; /* Evita que el logo sea interactivo */
+}
+
+/* Estilos para el texto dentro del componente App */
+.App-header {
+  background-color: #282c34; /* Fondo oscuro para el encabezado */
+  min-height: 20vh; /* Altura mínima del encabezado */
+  display: flex; /* Usa flexbox dentro del encabezado */
+  flex-direction: column; /* Los elementos se apilan verticalmente */
+  align-items: center; /* Alinea los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  font-size: calc(10px + 2vmin); /* Tamaño de la fuente basado en el tamaño de la ventana */
+  color: white; /* Texto blanco */
+}
+
+/* Estilos para el enlace dentro de la aplicación */
+.App-link {
+  color: #61dafb; /* Color del enlace */
+}
+
+.App-link:hover {
+  text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+}
