@@ -14,7 +14,7 @@ const port = 5000;
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000' // Permite solicitudes desde el frontend en el puerto 3000
+  origin: 'https://cosmos-indol-theta.vercel.app/' // Permite solicitudes desde el frontend en el puerto 3000
 }));
 
 // Ruta de login
