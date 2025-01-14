@@ -1,105 +1,50 @@
-.menu {
-    background-color: #333;
-    padding: 10px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 8%; /* Ajusta el alto del menú */
-    position: fixed; /* Fija el menú en la parte superior */
-    top: 0; /* Asegura que esté en la parte superior */
-    left: 0; /* Asegura que esté alineado a la izquierda */
-    width: 100%; /* Asegura que el menú ocupe todo el ancho */
-    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
-}
-
-body {
-    margin-top: 60px; /* Ajusta este valor al alto del menú */
-}
-
-.menu-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.menu-item {
-    margin: 0 15px;
-    color: white;
-}
-
-.menu-item a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.menu-item a:hover {
-    color: #1e90ff;
-    transform: scale(1.1);
-}
-
-.login {
-    position: fixed;
-    right: 0;
-    margin-right: 10px;
-}
-
-.menu {
-    transition: background-color 0.3s ease;
-}
-
-.menu:hover {
-    background-color: #444;
-}
-
-/* Estilo para el botón que abre el submenú */
-.gallery-toggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+.mision-container {
+    padding: 20px;
+    font-family: Arial, sans-serif; /* Asegúrate de tener una fuente coherente */
+  }
+  
+  .mision-header {
     display: flex;
     align-items: center;
-}
-
-.gallery-toggle:hover {
-    color: #1e90ff;
-}
-
-.submenu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: #444; /* Color de fondo del submenú */
-    position: absolute;
-    top: 100%; /* Coloca el submenú justo debajo del elemento principal */
-    left: 0;
-    width: 200px; /* Ancho del submenú */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.submenu li {
-    padding: 10px;
-}
-
-.submenu li a {
-    color: white;
-    text-decoration: none;
-}
-
-.submenu li a:hover {
-    color: #1e90ff;
-}
-
-/* Ocultar submenú por defecto */
-.submenu {
-    display: none;
-}
-
-/* Mostrar submenú cuando está abierto */
-.menu-item .submenu {
-    display: block;
-}
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .mision-header #logo {
+    max-width: 100px;  /* Ajusta el tamaño del logo si es necesario */
+    margin-right: 20px;
+  }
+  
+  .mision-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .mision-content {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .mision-content ol {
+    margin-left: 20px;
+  }
+  
+  .mision-content ol li {
+    margin-bottom: 15px;
+  }
+  
+  .mision-content p {
+    margin-bottom: 20px;
+  }
+  
+  .mision-content strong {
+    font-weight: bold;
+  }
+  
+  
