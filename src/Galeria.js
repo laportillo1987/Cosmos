@@ -11,7 +11,7 @@ const Galeria = () => {
   // Función para obtener las imágenes desde el servidor según la carpeta seleccionada
   useEffect(() => {
     const fetchImages = async () => {
-      const response = await fetch(`http://localhost:5000/api/images/${folderId}`);  // Incluimos folderId en la ruta
+      const response = await fetch(`https://cosmos-indol-theta.vercel.app/api/images/${folderId}`);  // Incluimos folderId en la ruta
       const data = await response.json();
       setImages(data);  // Almacenamos las imágenes en el estado
     };
@@ -66,7 +66,7 @@ const Galeria = () => {
               onClick={() => openCarousel(image)}  // Al hacer clic, abrir el carrusel
             >
               <img
-                src={`http://localhost:5000${image.url}`}
+                src={`https://cosmos-indol-theta.vercel.app/${image.url}`}
                 alt={`Imagen ${index + 1}`}
                 className="gallery-image"
               />
@@ -83,7 +83,7 @@ const Galeria = () => {
               &lt;
             </button>
             <img
-              src={`http://localhost:5000${selectedImage.url}`}
+              src={`https://cosmos-indol-theta.vercel.app/${selectedImage.url}`}
               alt="Imagen seleccionada"
               className="carousel-image"
             />
