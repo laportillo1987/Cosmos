@@ -61,7 +61,7 @@ const Menu = () => {
         </li>
         {/* Menú de Galería con submenú */}
         <li className="menu-item">
-          <Link className="gallery-toggle" onClick={() => toggleGalleryMenu('Galería')} onMouseMove ={() => toggleGalleryMenu('Galería')}>
+          <Link className="gallery-toggle" onClick={() => toggleGalleryMenu('Galería')} onMouseMove ={() => toggleGalleryMenu('')}>
             <FontAwesomeIcon icon={faImages} />
             <span>Galería</span>
           </Link>
