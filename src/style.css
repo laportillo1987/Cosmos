@@ -24,25 +24,26 @@ body {
    /* padding-top: 300px; /* Ajusta este valor según la altura de tu menú */
   }
   
-.menu {
+  .menu {
     background-color: #333;
     color: white;
     display: flex;
+    flex-direction: row; /* Menú horizontal por defecto */
     justify-content: space-between;
     align-items: center;
-    height: 8%;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 0 20px;
+    padding: 10px 20px;
     transition: background-color 0.3s ease;
 }
 
 .menu-list {
     list-style-type: none;
     display: flex;
+    flex-direction: row; /* Menú horizontal */
 }
 
 .menu-item {
@@ -91,7 +92,6 @@ body {
     color: #1e90ff;
 }
 
-/* Mostrar submenú cuando se abre */
 .menu-item .submenu {
     display: block;
 }
@@ -420,15 +420,26 @@ a:hover {
 }
 
 
-/* Media Queries para hacer la página responsiva */
 @media (max-width: 1024px) {
     .menu-list {
-        display: block;
+        display: flex;
+        flex-direction: row; /* Menú horizontal */
+        align-items: center;
         text-align: center;
     }
 
     .menu-item {
-        margin: 10px 0;
+        margin: 10px;
+    }
+
+    /* Ocultar texto en pantallas pequeñas */
+    .menu-item span {
+        display: none;
+    }
+
+    /* Ajustar íconos para que sean más pequeños si es necesario */
+    .menu-item a {
+        font-size: 1.5em;
     }
 
     .section {
@@ -440,27 +451,35 @@ a:hover {
     }
 }
 
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
+@media (max-width: 480px) {
+    .menu {
+        padding: 5px 10px; /* Ajustar padding para pantallas muy pequeñas */
     }
 
-    .menu {
-        flex-direction: column;
+    .menu-list {
+        display: flex;
+        flex-direction: column; /* Menú vertical */
         align-items: flex-start;
-        padding: 10px 20px;
+        width: 100%;
     }
 
     .menu-item {
-        margin: 10px 0;
+        margin: 5px 0; /* Ajustar margen para pantallas pequeñas */
     }
 
-    .section {
-        padding: 15px;
+    /* Los íconos se hacen más grandes para mejorar la visibilidad */
+    .menu-item a {
+        font-size: 2.5em;
     }
 
-    .login-box {
-        width: 90%;
-        padding: 20px;
+    .login {
+        position: absolute; /* Ajustar la posición del login en pantallas pequeñas */
+        bottom: 10px;
+        right: 10px;
+    }
+
+    /* El texto de los elementos del menú se sigue ocultando */
+    .menu-item span {
+        display: none;
     }
 }

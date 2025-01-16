@@ -22,9 +22,9 @@ const Valores = () => {
             </ol>
           </div>
         </div>
+
     </div>
   );
 };
 
 export default Valores;
-

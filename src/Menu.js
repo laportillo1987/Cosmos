@@ -8,6 +8,7 @@ const Menu = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   // Función para alternar la visibilidad del submenú
+
   const toggleGalleryMenu = (menuName) =>  {
     if (menuName === 'Galería') {
       setIsGalleryOpen(!isGalleryOpen);
@@ -16,6 +17,7 @@ const Menu = () => {
     {
       setIsGalleryOpen(false);
     }
+
   };
 
   // Función para manejar el clic en los elementos del submenú
@@ -55,6 +57,7 @@ const Menu = () => {
         </li>
         <li className="menu-item">
             <Link to="/Contacto" onMouseMove={() => toggleGalleryMenu('')}>
+
                 <FontAwesomeIcon icon={faEnvelope} />
                 <span>Contacto</span>
             </Link>
@@ -65,6 +68,7 @@ const Menu = () => {
             <FontAwesomeIcon icon={faImages} />
             <span>Galería</span>
           </Link>
+
           {isGalleryOpen && (
             <ul className="submenu">
               <li>

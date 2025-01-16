@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { useParams } from 'react-router-dom';
 import './style.css';  // Importamos el archivo CSS global para los estilos
 
@@ -14,6 +15,7 @@ const Galeria = () => {
       const response = await fetch(`http://localhost:5000/api/images/${folderId}`);
       const data = await response.json();
       setImages(data);
+
     };
 
     if (folderId) {
@@ -22,6 +24,7 @@ const Galeria = () => {
       setImages([]);
     }
   }, [folderId]);
+
 
   // Función para abrir el carrusel con la imagen seleccionada
   const openCarousel = (image) => {
@@ -49,10 +52,12 @@ const Galeria = () => {
   };
 
   return (
+
     <div className="container">
       {/* Título con el folderId */}
       <img src={`/recursos/logo.png`} id="logo" alt="Logo" />
       <h1 className="history-title">{folderId ? `Galería de ${folderId}` : 'Galería'}</h1>
+
 
       <div className="gallery-grid">
         {images.length === 0 ? (
@@ -62,12 +67,14 @@ const Galeria = () => {
             <div
               className="gallery-item"
               key={index}
+
               onClick={() => openCarousel(image)}
             >
               <img
                 src={`http://localhost:5000${image.url}`}
                 alt={`Imagen ${index + 1}`}
                 className="post-image"
+
               />
             </div>
           ))
@@ -83,6 +90,7 @@ const Galeria = () => {
             </button>
             <img
               src={`http://localhost:5000${selectedImage.url}`}
+
               alt="Imagen seleccionada"
               className="carousel-image"
             />

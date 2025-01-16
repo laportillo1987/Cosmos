@@ -6,8 +6,10 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('./db');
 const dotenv = require('dotenv');
+
 const axios = require('axios');  // Importar axios
 const OpenAI = require('openai');  // Importar la biblioteca openai
+
 
 dotenv.config();
 
@@ -146,7 +148,6 @@ app.get('/api/posts', (req, res) => {
 });
 app.use('/posts', express.static(path.join(__dirname, 'posts')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
-
 
 // Inicia el servidor
 app.listen(port, () => {

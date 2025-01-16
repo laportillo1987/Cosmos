@@ -1,5 +1,7 @@
 import React from 'react';
+
 import './style.css';  // Importamos el archivo CSS para los estilos
+
 
 const Contacto = () => {
   const handleCopyPhone = (phoneNumber) => {
@@ -9,6 +11,7 @@ const Contacto = () => {
   };
 
   return (
+
     <div className="container">
       <div className="blog-container">
         <img src={`/recursos/logo.png`} id='logo' alt="Logo" />

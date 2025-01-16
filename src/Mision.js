@@ -17,10 +17,10 @@ const Mision = () => {
             y promoviendo valores de justicia, libertad y solidaridad.
           </p>
         </div>
+
       </div>
     </div>
   );
 };
 
 export default Mision;
-

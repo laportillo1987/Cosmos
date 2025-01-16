@@ -1,7 +1,5 @@
 import React from 'react';
-
 import './style.css';  // Importar los estilos
-
 
 // Componente Inicio
 const Historia = () => {
@@ -42,6 +40,7 @@ const Historia = () => {
       </div>
     </div>
     </div>
+
   );
 };
 
