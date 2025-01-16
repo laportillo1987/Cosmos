@@ -53,7 +53,6 @@
   max-width: 100%;  /* Asegura que no se desborden horizontalmente */
   max-height: 100%; /* Asegura que no se desborden verticalmente */
 }
- 
 
 /* Efecto al pasar el cursor sobre la imagen */
 .gallery-image:hover {
