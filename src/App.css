@@ -1,0 +1,45 @@
+/* App.css */
+
+/* Estilos para el contenedor principal de la aplicación */
+/* App.css */
+
+/* Asegura que la página no se solape con el menú */
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Asegura que el contenido comience desde el top */
+  align-items: center;
+  padding-top: 80px; /* Ajusta este valor según la altura de tu menú */
+}
+
+
+/* Asegúrate de que el contenedor del logo no se vea afectado */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* Estilos para el encabezado */
+.App-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Enlaces dentro de la aplicación */
+.App-link {
+  color: #61dafb;
+}
+
+.App-link:hover {
+  text-decoration: underline;
+}
