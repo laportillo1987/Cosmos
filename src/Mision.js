@@ -23,4 +23,3 @@ const Mision = () => {
 };
 
 export default Mision;
-
