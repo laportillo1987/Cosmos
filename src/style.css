@@ -458,7 +458,7 @@ a:hover {
 
     .menu-list {
         display: flex;
-        flex-direction: column; /* Menú vertical */
+        flex-direction: row; /* Menú vertical */
         align-items: flex-start;
         width: 100%;
     }
