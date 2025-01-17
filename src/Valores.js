@@ -1,5 +1,5 @@
 import React from 'react';
-import './Valores.css';
+import './style.css';
 
 const Valores = () => {
   return (

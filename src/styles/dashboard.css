@@ -1,0 +1,473 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: rgba(10, 10, 10, 0.9);
+  color: #ddd;
+  overflow: hidden;
+  width: 100vw;body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgba(10, 10, 10, 0.9);
+    color: #ddd;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  /* Dashboard container con flexbox */
+  .dashboard-container {
+    display: flex;
+    height: 100%;
+    position: relative;
+    background: rgba(10, 10, 10, 0.9);
+  }
+  
+  /* Sidebar (Menu) */
+  .sidebar {
+    width: 0; /* Inicialmente está oculto */
+    background: rgba(10, 10, 10, 0.9);
+    padding: 1%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  /* Cuando el sidebar está abierto */
+  .sidebar.open {
+    width: 250px; /* El sidebar tiene un ancho de 250px cuando está abierto */
+  }
+  .link{
+    width: 0px
+  }
+  .link.open{
+    width: 250px
+  }
+  
+  /* Icono de menú */
+  .menu-icon {
+    font-size: 2rem;
+    color: #FFD700;
+    cursor: pointer;
+    z-index: 15;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+  
+  /* Sidebar Header */
+  .sidebar h2 {
+    color: #FFD700; /* Color dorado */
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Sidebar Menu */
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Sidebar Menu Items */
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  /* Sidebar Links */
+  .sidebar ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    position: relative;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  /* Sidebar Links Hover Effect */
+  .sidebar ul li a:hover {
+    background-color: #444;
+    transform: translateX(10px);
+  }
+  
+  /* Ajuste para el contenido principal cuando el sidebar está abierto */
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+    color: #ddd;
+    height: 100vh;
+    position: relative;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease; /* Transición suave */
+  }
+  
+  .main-content.sidebar-open {
+    margin-left: 250px; /* Desplazamos el contenido cuando el sidebar está abierto */
+  }
+  
+  /* Estilos para otros elementos */
+  h1 {
+    font-size: 48px;
+    color: #FFD700; /* Color dorado */
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 20px;
+    color: #ccc;
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .main-content {
+      margin-left: 0;
+    }
+  
+    .profile-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .profile-image img {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .profile-info h2 {
+      font-size: 20px;
+    }
+  
+    .jobs-table td, .jobs-table th {
+      font-size: 14px;
+    }
+  }
+  
+  /* Estilos para la tabla de trabajos */
+  .jobs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .jobs-table th,
+  .jobs-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .jobs-table th {
+    background-color: #444;
+    color: #ffd700;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  
+  .jobs-table tr:hover {
+    background-color: #333;
+  }
+  
+  .jobs-table td {
+    color: #ccc;
+    font-size: 16px;
+  }
+  
+  .jobs-table tr:nth-child(even) {
+    background-color: #2e2e2e;
+  }
+  
+  .jobs-table td,
+  .jobs-table th {
+    text-align: left;
+  }
+  
+  height: 100vh;
+  box-sizing: border-box;
+}
+.dashboard-container {
+  display: flex;
+  height: 100%;
+  position: relative;
+  background: rgba(10, 10, 10, 0.9);
+  width: 100%; /* Asegúrate de que ocupe el 100% del ancho */
+}
+
+/* Sidebar (Menu) */
+.sidebar {
+  width: 55px; /* Ocultamos el sidebar por defecto */
+  background: rgba(10, 10, 10, 0.9);
+  padding: 1%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  transition: width 0.3s ease-in-out;
+}
+.sidebar.open {
+  width: 250px; /* Ajusta el ancho a lo que desees */
+}
+.menu-icon {
+  font-size: 2rem;
+  color: #FFD700;
+  cursor: pointer;
+  z-index: 15;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+/* Sidebar Header */
+.sidebar h2 {
+  color: #FFD700; /* Cambié el rosa por dorado */
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar Menu Items */
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+/* Sidebar Links */
+.sidebar ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  position: relative;
+  transition: background 0.3s, transform 0.3s;
+}
+
+/* Sidebar Links Hover Effect */
+.sidebar ul li a:hover {
+  background-color: #444;
+  transform: translateX(10px);
+}
+
+/* Hover Effect for Icons */
+.sidebar ul li a i {
+  margin-right: 10px;
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+/* Sidebar Icon Hover */
+.sidebar ul li a:hover i {
+  transform: rotate(360deg);
+}
+
+.main-content {
+  margin-left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+  color: #ddd;
+  height: 100vh;
+  position: relative;
+  overflow-y: auto;
+}
+
+/* Main Title */
+.main-content h1 {
+  font-size: 48px;
+  color: #FFD700; /* Cambié el rosa por dorado */
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* Main Paragraph */
+.main-content p {
+  font-size: 20px;
+  color: #ccc;
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 20px;
+}
+
+.profile-image {
+  flex: 0 0 150px;
+  margin-right: 20px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 150px; /* Ajusté la altura de la foto */
+  object-fit: cover;
+}
+
+.profile-info h2 {
+  margin: 0;
+  color: #FFD700; /* Cambié el rosa por dorado */
+  font-size: 24px;
+}
+
+.profile-info p {
+  margin: 5px 0;
+  color: #ccc;
+  font-size: 16px;
+}
+
+/* Personal Data Section */
+.personal-data {
+  margin-top: 30px;
+}
+
+.personal-data h3 {
+  color: #FFD700; /* Cambié el rosa por dorado */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.personal-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal-info div {
+  width: 45%;
+}
+
+.personal-info p {
+  color: #ccc;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.personal-info p strong {
+  color: #FFD700; /* Cambié el rosa por dorado */
+}
+
+/* Button */
+button {
+  background-color: #FFD700; /* Cambié el rosa por dorado */
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #ffcc00; /* Un dorado más cálido para el hover */
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-info h2 {
+    font-size: 20px;
+  }
+
+  .jobs-table td, .jobs-table th {
+    font-size: 14px;
+  }
+}
+/* Estilos para la tabla de trabajos */
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.jobs-table th,
+.jobs-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.jobs-table th {
+  background-color: #444;
+  color: #ffd700;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.jobs-table tr:hover {
+  background-color: #333;
+}
+
+.jobs-table td {
+  color: #ccc;
+  font-size: 16px;
+}
+
+.jobs-table tr:nth-child(even) {
+  background-color: #2e2e2e;
+}
+
+.jobs-table td,
+.jobs-table th {
+  text-align: left;
+}
