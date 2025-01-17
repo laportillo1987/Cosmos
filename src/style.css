@@ -38,33 +38,81 @@ body {
     z-index: 1000;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
-}
+  }
 
-.menu-list {
+  .menu-list {
     list-style-type: none;
     display: flex;
     flex-direction: row; /* Menú horizontal */
-}
+  }
 
 .menu-item {
-    margin: 0 15px;
-    color: white;
-    position: relative;
+  margin: 0 15px;
+  color: white;
+  position: relative;
 }
 
 .menu-item a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
-}
+  }
 
-.menu:hover {
-    background-color: #444;
-}
+    .menu:hover {
+        background-color: #444;
+    }
 
-.menu-item a:hover {
-    color: #1e90ff;
-}
+    menu-item a:hover {
+        color: #1e90ff;
+    }
+
+  .menu-toggle {
+    display: none; /* Oculto por defecto */
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .hamburger-icon {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s;
+  }
+  
+  .hamburger-icon::before {
+    top: -10px;
+  }
+  
+  .hamburger-icon::after {
+    top: 10px;
+  }
+  
+  .menu.open .hamburger-icon {
+    background-color: transparent;
+  }
+  
+  .menu.open .hamburger-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .menu.open .hamburger-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
 
 .submenu {
     list-style-type: none;
@@ -429,7 +477,7 @@ a:hover {
     }
 
     .menu-item {
-        margin: 10px;
+        margin: 2%;
     }
 
     /* Ocultar texto en pantallas pequeñas */
@@ -443,7 +491,7 @@ a:hover {
     }
 
     .section {
-        padding: 20px;
+        padding: 2%;
     }
 
     .login-box {
@@ -453,7 +501,7 @@ a:hover {
 
 @media (max-width: 480px) {
     .menu {
-        padding: 5px 10px; /* Ajustar padding para pantallas muy pequeñas */
+        padding: 1% 2%; /* Ajustar padding para pantallas muy pequeñas */
     }
 
     .menu-list {
@@ -464,18 +512,18 @@ a:hover {
     }
 
     .menu-item {
-        margin: 5px 0; /* Ajustar margen para pantallas pequeñas */
+        margin: 1% 0; /* Ajustar margen para pantallas pequeñas */
     }
 
     /* Los íconos se hacen más grandes para mejorar la visibilidad */
     .menu-item a {
-        font-size: 2.5em;
+        font-size: 1em;
     }
 
     .login {
         position: absolute; /* Ajustar la posición del login en pantallas pequeñas */
-        bottom: 10px;
-        right: 10px;
+        bottom: 2%;
+        right: 2%;
     }
 
     /* El texto de los elementos del menú se sigue ocultando */
