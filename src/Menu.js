@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';  // Importamos Link de React Router
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faBook, faEnvelope, faUser, faImages } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faBook, faEnvelope, faUser, faImages, faEye, faHandsHoldingChild, faBullseye } from '@fortawesome/free-solid-svg-icons';
 import './style.css';
 
 const Menu = () => {
@@ -42,16 +42,19 @@ const Menu = () => {
         </li>
         <li className="menu-item">
           <Link to="/Mision" onMouseMove={() => toggleGalleryMenu('')}>
+            <FontAwesomeIcon icon={faBullseye} />
             <span>Misión</span>
           </Link>
         </li>
         <li className="menu-item">
         <Link to="/Vision" onMouseMove={() => toggleGalleryMenu('')}>
+            <FontAwesomeIcon icon={faEye} />
             <span>Visión</span>
           </Link>
         </li>
         <li className="menu-item">
-        <Link to="/Valores" onMouseMove={() => toggleGalleryMenu('')}>
+          <Link to="/Valores" onMouseMove={() => toggleGalleryMenu('')}>
+          <FontAwesomeIcon icon={faHandsHoldingChild} />
             <span>Valores</span>
           </Link>
         </li>
@@ -64,7 +67,7 @@ const Menu = () => {
         </li>
         {/* Menú de Galería con submenú */}
         <li className="menu-item">
-          <Link className="gallery-toggle" onClick={() => toggleGalleryMenu('Galería')} onMouseMove ={() => toggleGalleryMenu('')}>
+          <Link className="gallery-toggle" onClick={() => toggleGalleryMenu('Galería')} >
             <FontAwesomeIcon icon={faImages} />
             <span>Galería</span>
           </Link>
